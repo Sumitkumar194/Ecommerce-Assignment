@@ -1,0 +1,11 @@
+<div class="main" (click)="viewproduct(productData.id)" style="cursor: pointer">
+  <div class="image">
+    <img [src]="productData.image" />
+  </div>
+  <footer>
+    <div class="upper">
+      <p>{{ productData.title }}</p>
+      <h2>${{ productData.price }}</h2>
+    </div>
+  </footer>
+</div>

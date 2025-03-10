@@ -1,0 +1,12 @@
+<div class="main" (click)="viewproduct(productdata.id)">
+  <div class="image">
+    <img [src]="productdata.image" />
+  </div>
+  <footer>
+    <div class="upper">
+      <p>{{ productdata.title }}</p>
+      <h2>${{ productdata.price }}</h2>
+    </div>
+    <button>Buy Now</button>
+  </footer>
+</div>

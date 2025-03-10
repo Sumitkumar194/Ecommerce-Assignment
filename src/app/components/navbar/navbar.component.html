@@ -1,0 +1,39 @@
+<nav>
+  <div class="left">
+    <h1 (click)="Gotohome()" style="cursor: pointer">Ecommerce</h1>
+  </div>
+  <div class="right">
+    <div class="inp">
+      <img
+        src="https://jayant-ecommerce-angular.onrender.com/assets/material-symbols--search.png"
+        alt=""
+      />
+      <input
+        type="text"
+        placeholder="Serch product By Name, Category..."
+        (input)="onSerchInput($event)"
+      />
+    </div>
+    <div class="total" style="position: relative">
+      <img
+        style="height: 2rem"
+        (click)="GoToCart()"
+        src="https://jayant-ecommerce-angular.onrender.com/assets/cart-white.png"
+        alt=""
+      />
+      <span style="position: absolute; left: 9px; top: 4px; color: brown">
+        {{ cartservice.totalItem() }}</span
+      >
+    </div>
+    <img
+      style="cursor: pointer"
+      (click)="LoginPage()"
+      src="https://jayant-ecommerce-angular.onrender.com/assets/user.png"
+      alt=""
+    />
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

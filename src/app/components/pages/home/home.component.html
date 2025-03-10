@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="first">
+    <div class="left">
+      <h1>Grab upto 50% of on all laptops bags</h1>
+      <button (click)="NavigateToallproduct()">Buy Now →</button>
+    </div>
+    <div class="right">
+      <img
+        src="https://jayant-ecommerce-angular.onrender.com/assets/laptopBag.png"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="secound">
+    <app-single-card
+      *ngFor="let card of cardlist"
+      [cardData]="card"
+    ></app-single-card>
+  </div>
+  <div class="third">
+    <header><p>Trending Products</p></header>
+    <div class="cardContainer">
+      <app-trending-products
+        *ngFor="let product of singleCardData"
+        [productdata]="product"
+      ></app-trending-products>
+    </div>
+  </div>
+</div>

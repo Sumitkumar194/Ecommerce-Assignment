@@ -1,0 +1,126 @@
+.container {
+  min-height: 100vh;
+  background-color: #161616;
+  padding-top: 20px;
+  color: white;
+}
+.main {
+  margin: 0 5%;
+}
+header {
+  background-color: rgb(138, 0, 0);
+  height: 54px;
+  color: white;
+  padding: 12px 0;
+}
+header h2 {
+  text-align: center;
+}
+h1 {
+  text-decoration: underline;
+  text-align: center;
+  padding: 20px 0;
+}
+.center {
+  padding: 10px 0;
+  background-color: rgb(138, 0, 0);
+  height: 114vh;
+  border: 1.2px solid white;
+  border-radius: 11px;
+}
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+ul li {
+  list-style: none;
+  font-size: 1rem;
+}
+.quant img,
+.total img {
+  height: 1.4rem;
+  border: 1.4px solid;
+}
+.total img {
+  transform: translate(5px, 5px);
+}
+.cart {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+}
+footer {
+  display: flex;
+  padding: 20px;
+}
+footer .left {
+  width: 50%;
+}
+.right {
+  width: 50%;
+}
+.left input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 55%;
+  padding: 13px 5px;
+  outline: none;
+  /* font-size: 1.2rem; */
+  color: white;
+}
+.left label {
+  padding: 12px 5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid;
+  font-size: 1.5rem;
+}
+.left img {
+  height: 1.7rem;
+  transform: translateY(10px);
+}
+.quant {
+  display: flex;
+  align-items: center;
+  justify-content: sc;
+  justify-content: center;
+  gap: 6px;
+}
+.details {
+  display: flex;
+  width: 90%;
+  height: 100%;
+}
+.details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.details ul:nth-child(2) {
+  align-items: flex-end;
+}
+.buttons {
+  margin-top: 8px;
+}
+button {
+  font-size: 1.23rem;
+  padding: 9px 23px;
+  border-radius: 6px;
+  border: none;
+  color: rgb(138, 0, 0);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+@media (max-width: 750px) {
+  .main {
+    transform: translateY(57px);
+  }
+  .center {
+    height: fit-content;
+  }
+}

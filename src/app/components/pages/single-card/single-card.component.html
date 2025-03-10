@@ -1,0 +1,12 @@
+<div class="main">
+  <h3>{{ cardData.title }}</h3>
+  <div class="cards">
+    <div class="image" *ngFor="let card of cardData.image">
+      <img [src]="card.imageUrl" alt="" />
+      <p>{{ card.decription }}</p>
+    </div>
+  </div>
+  <div class="last">
+    <a routerLink="/all-product">Explore More...</a>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="main">
+    <header>
+      <h2>Shop for $500 and more and get 10% discount on your order</h2>
+    </header>
+    <h1>Shoping Cart</h1>
+    <div class="center" *ngIf="cartProducts.length > 0; else emptyCart">
+      <ul>
+        <li>Product</li>
+        <li>Price</li>
+        <li>Quantity</li>
+        <li>Subtotal</li>
+      </ul>
+      <hr />
+      <div>
+        <div class="allProducts" *ngFor="let product of cartProducts">
+          <div class="cart">
+            <div class="imgDetails">
+              <img style="width: 100%" [src]="product.item.image" alt="" />
+              <p>
+                {{ product.item.title }}
+              </p>
+            </div>
+            <div class="price">
+              <span>${{ product.item.price }}</span>
+            </div>
+            <div class="quant">
+              <img
+                (click)="incresItem(product.item.id)"
+                src="https://jayant-ecommerce-angular.onrender.com/assets/add.png"
+                alt=""
+              />
+              <span>{{ product.quantity }}</span>
+              <img
+                (click)="decreseItem(product.item.id)"
+                src="https://jayant-ecommerce-angular.onrender.com/assets/subtract.png"
+                alt=""
+              />
+            </div>
+            <div class="total" (click)="RemovefromCart(product.item.id)">
+              <span>${{ productTotalamt() }}</span>
+              <img
+                src="https://jayant-ecommerce-angular.onrender.com/assets/delete.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <hr />
+      <footer>
+        <div class="left">
+          <h2>Delivery availability</h2>
+          <img
+            src="https://jayant-ecommerce-angular.onrender.com/assets/location.png"
+            alt=""
+          />
+          <input type="text" placeholder="Enter Pin Code Here" name="l" />
+          <label for="l">Check</label>
+        </div>
+        <div class="right">
+          <h2>Order Summary</h2>
+          <div class="details">
+            <ul>
+              <li>Subtotal</li>
+              <li>Total discount</li>
+              <li>Standerd Shipping</li>
+              <li><h2>Order Total</h2></li>
+            </ul>
+            <ul>
+              <li>${{ subtotal() }}</li>
+              <li>${{ discount }}</li>
+              <li>$30.00</li>
+              <li>${{ allTotal() + 30 }}</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <div
+        class="buttons"
+        style="width: 96%; display: flex; justify-content: right; gap: 50px"
+      >
+        <button (click)="GoToCart()" style="cursor: pointer">
+          Countinue Shoping
+        </button>
+        <button>Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #emptyCart>
+  <div class="elseCmp" style="height: 100vh; background-color: rgb(138, 0, 0)">
+    <h1>Item that will be added to cart will show here</h1>
+    <button
+      (click)="GoToCart()"
+      style="display: block; margin: auto; width: 80%; cursor: pointer"
+    >
+      Countinue Shoping
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,91 @@
+<div class="main">
+  <div class="container">
+    <header>
+      <p>
+        {{ selectedCategory ? selectedCategory + "Products" : "All products" }}
+      </p>
+    </header>
+    <div class="cardContainer" style="position: relative">
+      <label style="position: absolute; top: -41px; left: 15px" for="checkbox1"
+        ><input
+          type="checkbox"
+          style="display: none"
+          name="checkbox1"
+          id="checkbox1"
+          [(ngModel)]="CheckedVlue" /><img
+          [class.Rotate]="CheckedVlue"
+          style="height: 3rem"
+          src="https://jayant-ecommerce-angular.onrender.com/assets/filter.png"
+          alt=""
+      /></label>
+      <div class="filter" [class.disnone]="CheckedVlue">
+        <div class="gender">
+          <h2>Genders</h2>
+
+          <label for="man"
+            ><input
+              type="radio"
+              name="gender"
+              [(ngModel)]="selectedCategory"
+              value="men\'s clothing"
+              id="man"
+              (click)="applyCategoryFilter('men\'s clothing')"
+            />Man's</label
+          >
+          <br />
+
+          <label for="female"
+            ><input
+              type="radio"
+              name="gender"
+              id="female"
+              [(ngModel)]="selectedCategory"
+              value="women\'s clothing"
+              (click)="applyCategoryFilter('women\'s clothing')"
+            />Women's</label
+          >
+          <h2>Category</h2>
+          <label for="clothing"
+            ><input
+              type="radio"
+              name="
+              Category"
+              value="clothing"
+              [(ngModel)]="selectedCategory"
+              id="clothing"
+              (click)="applyCategoryFilter('clothing')"
+            />Clothing</label
+          >
+          <br /><label for="jewelery"
+            ><input
+              type="radio"
+              name="Category"
+              value="jewelery"
+              id="jewelery"
+              [(ngModel)]="selectedCategory"
+              (click)="applyCategoryFilter('jewelery')"
+            />jewelery's</label
+          >
+          <br /><label for="electronics"
+            ><input
+              type="radio"
+              name="Category"
+              value="electronics"
+              [(ngModel)]="selectedCategory"
+              id="electronics"
+              (click)="applyCategoryFilter('electronics')"
+            />Electronics</label
+          >
+          <br />
+        </div>
+        <h2 (click)="clearFilters()">Clear All Filters</h2>
+      </div>
+      <app-similar-product
+        (click)="viewproduct(filterProducts.id)"
+        *ngFor="let product of filterProducts"
+        [productData]="product"
+      >
+      </app-similar-product>
+    </div>
+  </div>
+</div>

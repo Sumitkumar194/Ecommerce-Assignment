@@ -1,0 +1,144 @@
+.container {
+  min-height: 100vh;
+  /* width: 100vw; */
+  background-color: #161616;
+  padding-bottom: 10px;
+}
+
+.first {
+  min-height: 261px;
+  background-color: rgb(138, 0, 0);
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.left {
+  width: 45%;
+  margin-left: 55px;
+  height: 53%;
+}
+.left h1 {
+  font-size: 2.8rem;
+  letter-spacing: -1px;
+  margin-bottom: 2vw;
+}
+.left button {
+  font-size: 1.23rem;
+  height: 37px;
+  width: 65%;
+  border-radius: 10px;
+  border: none;
+  color: rgb(138, 0, 0);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.left button:hover {
+  background-color: #d3d3d3;
+}
+.right {
+  height: 24vmax;
+  /* width: 100%; */
+}
+.right img {
+  height: 100%;
+  width: 100%;
+}
+.secound {
+  /* height: 480px; */
+  margin: 10px 0;
+  margin-left: 5%;
+  margin-right: 4.6%;
+  display: grid;
+  gap: 8px;
+  color: white;
+}
+.third {
+  min-height: 50vh;
+  /* background-color: #d3d3d3; */
+  color: white;
+  margin: 0 5%;
+}
+.third p {
+  font-size: 6vmin;
+  text-align: center;
+  width: fit-content;
+  margin: 0px auto;
+  position: relative;
+  padding: 57px 0;
+}
+.third p::before {
+  content: "";
+  position: absolute;
+  width: 9vw;
+  background-color: white;
+  height: 2px;
+  right: -9vmax;
+  top: 76px;
+}
+.third p::after {
+  content: "";
+  position: absolute;
+  width: 9vw;
+  background-color: white;
+  height: 2px;
+  left: -9vmax;
+  top: 76px;
+}
+.cardContainer {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(138, 0, 0);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+@media (min-width: 791px) {
+  .secound {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .first {
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+  }
+  .right {
+    height: 100%;
+    width: 100vw;
+  }
+  .left {
+    width: fit-content;
+    margin-left: 55px;
+    height: fit-content;
+  }
+  .left h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 2vw;
+  }
+  .left button {
+    margin-bottom: 19px;
+  }
+}
+@media (max-width: 790px) {
+  .first {
+    transform: translateY(57px);
+  }
+  .secound {
+    margin-top: 67px;
+
+    grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+  }
+  .cardContainer {
+    grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+  }
+
+  /* .third p::after,
+  .third p::before {
+    width: 25%;
+  } */
+}

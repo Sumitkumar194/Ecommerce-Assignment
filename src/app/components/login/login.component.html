@@ -1,0 +1,115 @@
+<div class="main">
+  <div class="center">
+    @if(isRegister) {
+    <form>
+      <h2>Ecommerce</h2>
+      <input
+        [(ngModel)]="userData.username"
+        type="text"
+        name="usename"
+        placeholder="Your Good Name"
+        #username="ngModel"
+        required
+      />
+      <input
+        [(ngModel)]="userData.email"
+        type="text"
+        name="email"
+        placeholder="Enter Email"
+        required
+        #eg="ngModel"
+        email
+      />
+      @if(eg.touched && eg.errors?.['required']) {
+      <span class="text-danger">it is a required field</span>
+      } @else if(eg.dirty && eg.errors?.['email']) {
+      <div class="text-primary">
+        <span>plese Enter valid Email</span>
+      </div>
+      }
+      <input
+        [(ngModel)]="userData.password"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required
+        minlength="6"
+        #len="ngModel"
+      />
+      @if(len.touched && len.errors?.['required']) {
+      <span class="text-danger">it is a required field</span>
+      } @else if(len.touched && len.errors?.['minlength']) {
+      <div class="text-primary">
+        <span>password contain must 6 length</span>
+      </div>
+      }
+      <h2>Gender</h2>
+      <div class="gender">
+        <input style="width: 3vmin" type="radio" value="Male" name="Gender" />
+        <label style="margin-right: 12px" for="Male">Male</label>
+        <input style="width: 3vmin" type="radio" value="Female" name="Gender" />
+        <label style="margin-right: 12px" for="Female">Female</label>
+        <input style="width: 3vmin" type="radio" value="Other" name="Gender" />
+        <label style="margin-right: 12px" for="Other">Other</label>
+      </div>
+      <input
+        type="text"
+        required
+        placeholder="Your Mobile Number"
+        [(ngModel)]="userData.Mnumber"
+        #mane="ngModel"
+        minlength="10"
+        name="Mnumber"
+        maxlength="10"
+      />
+      @if (mane.touched && mane.errors?.['required']) {
+      <span>Requried Field</span>
+      } @else if (mane.touched && (mane.errors?.['minlength'] ||
+      mane.errors?.['maxlength'])) {
+
+      <span>Phone Number is Not Valid</span>
+      }
+      <input
+        type="button"
+        value="sign in"
+        placeholder="sign in"
+        (click)="Submit()"
+      />
+
+      <span
+        >Don't Have't Account ?
+        <a href="" (click)="isRegister = !isRegister">Signup</a>
+      </span>
+    </form>
+    } @else {
+    <form action="">
+      <h2>Ecommerce</h2>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        name="email"
+        [(ngModel)]="loginUser.email"
+      />
+      <input
+        type="password"
+        placeholder="Enter password"
+        name="password"
+        [(ngModel)]="loginUser.password"
+      />
+      <input
+        type="button"
+        value="Login"
+        style="cursor: pointer"
+        name="button"
+        (click)="Login()"
+      />
+      <!-- <button (click)="Login()">Login2</button> -->
+      <a href=""> Forgot password </a>
+      <span
+        >All ready Have't Account ?
+        <a href="" (click)="isRegister = !isRegister">Login</a>
+      </span>
+    </form>
+    }
+  </div>
+</div>

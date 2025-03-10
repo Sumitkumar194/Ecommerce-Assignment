@@ -1,0 +1,45 @@
+.main {
+  height: 83vh;
+  width: 27.6vw;
+  background-color: rgb(138, 0, 0);
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1.5px solid;
+  padding: 0 0 20px 0;
+}
+.image {
+  height: 85%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main img {
+  width: 94%;
+  height: 98%;
+  object-fit: contain;
+}
+.upper {
+  width: 100%;
+}
+footer {
+  padding: 10px 14px;
+  gap: 15px;
+}
+footer p {
+  font-size: 1.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 750px) {
+  .main {
+    width: 100%;
+  }
+  .image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="container">
+    <div class="left">
+      <img [src]="product.image" />
+    </div>
+    <div class="right">
+      <header>
+        <h1>{{ product.title }}</h1>
+        <p>
+          <span>{{ product.rating.rate }}<span>★</span></span>
+          {{ product.rating.count }} Ratings
+        </p>
+      </header>
+      <hr />
+      <div class="center">
+        <div class="price">
+          <span>${{ product.price }} </span
+          ><span class="actual" style="text-decoration: line-through"
+            >$439.80</span
+          >
+        </div>
+        <div class="buttons">
+          @if(addOrGoTocart) {
+          <button (click)="AddToCart(product)">Add to Cart</button>
+          } @else {
+          <button (click)="GoToCart()">Go to Cart</button>
+          }
+          <button (click)="BuyNow(product)">Buy Now</button>
+        </div>
+      </div>
+      <hr />
+      <div class="details">
+        <h1>Product Details</h1>
+        <h2>Descriptions:</h2>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="similar_product">
+    <header><p>Similar Products</p></header>
+    <div class="cardContainer">
+      <app-similar-product
+        *ngFor="let product of similarProduct"
+        [productData]="product"
+      ></app-similar-product
+      >>
+    </div>
+  </div>
+</div>

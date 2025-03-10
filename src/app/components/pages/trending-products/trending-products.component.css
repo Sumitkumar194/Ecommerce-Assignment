@@ -1,0 +1,57 @@
+.main {
+  height: 98vh;
+  width: 28vw;
+  background-color: rgb(138, 0, 0);
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1.5px solid;
+  padding: 0 0 20px 0;
+  cursor: pointer;
+}
+.image {
+  height: 80%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main img {
+  width: 94%;
+  height: 98%;
+  object-fit: contain;
+}
+.upper {
+  width: 100%;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+  gap: 15px;
+}
+footer p {
+  font-size: 1.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+}
+footer button {
+  padding: 9px 32%;
+  border: none;
+  font-size: 1.2rem;
+  color: darkred;
+  font-weight: 800;
+  border-radius: 7px;
+  cursor: pointer;
+}
+@media (max-width: 750px) {
+  .main {
+    width: 100%;
+  }
+  .image {
+    width: 100%;
+  }
+}
